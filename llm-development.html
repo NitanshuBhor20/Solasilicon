@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Solasilicon | AI & LLM Development</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<link rel="stylesheet" href="css/llm.css" />
+
+</head>
+
+<body>
+
+<div class="cursor"></div>
+<div class="cursor-blur"></div>
+
+<div id="particles"></div>
+
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+<div class="nav-container">
+
+<a href="index.html" class="logo">
+<div class="logo-box">SS</div>
+<span>Solasilicon</span>
+</a>
+
+<nav class="nav-menu" id="navMenu">
+
+<div class="nav-item">
+
+<a href="#">
+AI for Your Business
+<i class="fa-solid fa-chevron-down"></i>
+</a>
+
+<div class="mega-menu">
+
+<div class="mega-column">
+
+<h4>AI Solutions</h4>
+
+<a href="ai-development-services.html"><i class="fa-solid fa-brain"></i> AI Development Services</a>
+<a href="ai-software-development.html"><i class="fa-solid fa-microchip"></i> AI Software Development</a>
+<a href="machine-learning-development.html"><i class="fa-solid fa-robot"></i> Machine Learning Development</a>
+<a href="ai-saas-development.html"><i class="fa-solid fa-cloud"></i> AI SaaS Development</a>
+
+</div>
+
+<div class="mega-column">
+
+<h4>Startup Services</h4>
+
+<a href="no-code-mvp-development.html"><i class="fa-solid fa-bolt"></i> No Code MVP Development</a>
+<a href="ai-app-consulting.html"><i class="fa-solid fa-lightbulb"></i> AI App Consulting</a>
+<a href="llm-development.html"><i class="fa-solid fa-layer-group"></i> LLM Development</a>
+<a href="mlops-consulting.html"><i class="fa-solid fa-server"></i> MLOps Consulting</a>
+
+</div>
+
+<div class="promo-card">
+
+<span>🚀 AI STARTUP ACCELERATION</span>
+
+<h3>
+Build The Future With Intelligent AI
+</h3>
+
+<p>
+Scale your SaaS using futuristic AI systems,
+enterprise LLMs and intelligent automation.
+</p>
+
+<button class="promo-btn">
+Let's Discuss Now
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<a href="#">Services</a>
+<a href="#">Products</a>
+<a href="#">Blog</a>
+<a href="#">Contact Us</a>
+
+</nav>
+
+<div style="display:flex;align-items:center;gap:20px;">
+
+<a
+href="https://api.whatsapp.com/send?phone=917708068697&text=Hello%20Solasilicon"
+target="_blank"
+class="btn whatsapp-btn magnetic-btn"
+>
+Say Hi on WhatsApp
+</a>
+
+<div class="hamburger" id="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content reveal">
+
+<div class="hero-tag">
+✨ FUTURE OF AI CONSULTING
+</div>
+
+<h1>
+Custom AI &
+<span>LLM Development</span>
+For Fast-Growing Enterprises
+</h1>
+
+<p>
+We engineer futuristic AI ecosystems,
+enterprise-grade LLMs and intelligent SaaS
+products that transform ambitious startups into
+market-leading companies.
+</p>
+
+<div class="typing" id="typing"></div>
+
+<div class="hero-buttons">
+
+<button class="btn gradient-btn" id="demoBtn">
+Schedule a Demo
+</button>
+
+<a href="#" class="btn secondary-btn">
+Talk to AI Experts
+</a>
+
+</div>
+
+</div>
+
+<div class="floating-card card1">
+<i class="fa-solid fa-brain"></i>
+<h4>AI Automation</h4>
+</div>
+
+<div class="floating-card card2">
+<i class="fa-solid fa-robot"></i>
+<h4>LLM Engineering</h4>
+</div>
+
+<div class="floating-card card3">
+<i class="fa-solid fa-chart-line"></i>
+<h4>AI Analytics</h4>
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="section">
+
+<div class="section-header reveal">
+<span>OUR SERVICES</span>
+<h2>Enterprise AI Solutions</h2>
+<p>
+Premium AI engineering crafted for futuristic businesses.
+</p>
+</div>
+
+<div class="services-grid">
+
+<div class="service-card reveal">
+<i class="fa-solid fa-layer-group"></i>
+<h3>LLM Development</h3>
+<p>
+Build custom enterprise-grade language models
+optimized for your business workflows.
+</p>
+<a href="#">Read More →</a>
+</div>
+
+<div class="service-card reveal">
+<i class="fa-solid fa-robot"></i>
+<h3>AI Automation</h3>
+<p>
+Intelligent automations powered by futuristic AI systems.
+</p>
+<a href="#">Read More →</a>
+</div>
+
+<div class="service-card reveal">
+<i class="fa-solid fa-server"></i>
+<h3>MLOps Engineering</h3>
+<p>
+Deploy, scale and monitor AI infrastructure with precision.
+</p>
+<a href="#">Read More →</a>
+</div>
+
+<div class="service-card reveal">
+<i class="fa-solid fa-comments"></i>
+<h3>AI Chatbots</h3>
+<p>
+Conversational AI experiences for modern SaaS products.
+</p>
+<a href="#">Read More →</a>
+</div>
+
+<div class="service-card reveal">
+<i class="fa-solid fa-wand-magic-sparkles"></i>
+<h3>Generative AI</h3>
+<p>
+Create content, workflows and intelligence using GenAI.
+</p>
+<a href="#">Read More →</a>
+</div>
+
+<div class="service-card reveal">
+<i class="fa-solid fa-cloud"></i>
+<h3>AI SaaS Development</h3>
+<p>
+Build scalable AI-first SaaS platforms for modern startups.
+</p>
+<a href="#">Read More →</a>
+</div>
+
+</div>
+
+</section>
+
+<!-- FEATURES -->
+
+<section class="section">
+
+<div class="section-header reveal">
+<span>WHY SOLASILICON</span>
+<h2>Built For Modern AI Startups</h2>
+</div>
+
+<div class="feature-grid">
+
+<div class="feature-card reveal">
+<h3>Context-Aware AI</h3>
+<p>
+AI systems trained on your workflows,
+brand tone and enterprise data.
+</p>
+</div>
+
+<div class="feature-card reveal">
+<h3>RAG Architecture</h3>
+<p>
+Retrieval-powered LLM systems with accurate responses.
+</p>
+</div>
+
+<div class="feature-card reveal">
+<h3>AI Infrastructure</h3>
+<p>
+MLOps pipelines and scalable AI deployment systems.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- TIMELINE -->
+
+<section class="section">
+
+<div class="section-header reveal">
+<span>OUR PROCESS</span>
+<h2>AI Development Workflow</h2>
+</div>
+
+<div class="timeline">
+
+<div class="timeline-item left reveal">
+<div class="timeline-content">
+<h3>Discovery & AI Strategy</h3>
+<p>
+Deep analysis of workflows and business opportunities.
+</p>
+</div>
+</div>
+
+<div class="timeline-item right reveal">
+<div class="timeline-content">
+<h3>Language Intelligence Mapping</h3>
+<p>
+Contextual architecture planning for intelligent AI systems.
+</p>
+</div>
+</div>
+
+<div class="timeline-item left reveal">
+<div class="timeline-content">
+<h3>Sprint-Based LLM Engineering</h3>
+<p>
+Rapid agile AI development with deployment iterations.
+</p>
+</div>
+</div>
+
+<div class="timeline-item right reveal">
+<div class="timeline-content">
+<h3>Trust-Focused Testing</h3>
+<p>
+Security analysis and hallucination reduction.
+</p>
+</div>
+</div>
+
+<div class="timeline-item left reveal">
+<div class="timeline-content">
+<h3>Deployment & Optimization</h3>
+<p>
+Real-time optimization and AI infrastructure tuning.
+</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- STATS -->
+
+<section class="section">
+
+<div class="stats-grid">
+
+<div class="stat-card reveal">
+<h2 class="counter" data-target="280">0</h2>
+<p>Happy Clients</p>
+</div>
+
+<div class="stat-card reveal">
+<h2 class="counter" data-target="35">0</h2>
+<p>Enterprise Projects</p>
+</div>
+
+<div class="stat-card reveal">
+<h2 class="counter" data-target="15">0</h2>
+<p>Years Experience</p>
+</div>
+
+<div class="stat-card reveal">
+<h2 class="counter" data-target="2000">0</h2>
+<p>SaaS Delivered</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- FAQ -->
+
+<section class="section">
+
+<div class="section-header reveal">
+<span>FAQ</span>
+<h2>Frequently Asked Questions</h2>
+</div>
+
+<div class="faq-container">
+
+<div class="faq-item active reveal">
+
+<div class="faq-question">
+<h3>What does LLM mean in AI?</h3>
+<span>−</span>
+</div>
+
+<div class="faq-answer">
+<p>
+LLM stands for Large Language Model.
+It powers intelligent AI systems like ChatGPT.
+</p>
+</div>
+
+</div>
+
+<div class="faq-item reveal">
+
+<div class="faq-question">
+<h3>How does custom LLM development work?</h3>
+<span>+</span>
+</div>
+
+<div class="faq-answer">
+<p>
+We train and optimize AI systems using your data.
+</p>
+</div>
+
+</div>
+
+<div class="faq-item reveal">
+
+<div class="faq-question">
+<h3>Can I train my own AI model?</h3>
+<span>+</span>
+</div>
+
+<div class="faq-answer">
+<p>
+Yes. We help businesses train custom AI models.
+</p>
+</div>
+
+</div>
+
+<div class="faq-item reveal">
+
+<div class="faq-question">
+<h3>How much does AI development cost?</h3>
+<span>+</span>
+</div>
+
+<div class="faq-answer">
+<p>
+Pricing depends on integrations and deployment scale.
+</p>
+</div>
+
+</div>
+
+<div class="faq-item reveal">
+
+<div class="faq-question">
+<h3>How long does AI implementation take?</h3>
+<span>+</span>
+</div>
+
+<div class="faq-answer">
+<p>
+Most AI projects take between 4–16 weeks.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="section">
+
+<div class="contact-wrapper">
+
+<div class="contact-form reveal">
+
+<h2>Discuss Your AI Project</h2>
+
+<form id="form">
+
+<div class="input-box">
+<input type="text" required>
+<label>Your Name</label>
+</div>
+
+<div class="input-box">
+<input type="email" required>
+<label>Email Address</label>
+</div>
+
+<div class="input-box">
+<textarea required></textarea>
+<label>Your Message</label>
+</div>
+
+<button type="submit" class="btn gradient-btn">
+Send Message
+</button>
+
+</form>
+
+</div>
+
+<div class="contact-info reveal">
+
+<span>LET'S TALK</span>
+
+<h2>
+Build The Future With AI
+</h2>
+
+<p>
+Solasilicon helps enterprises launch AI-powered products,
+LLM ecosystems and futuristic automation systems.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+
+<div class="logo">
+<div class="logo-box" style="color: azure;padding-left: 5px;">SS</div><span>Solasilicon</span>
+</div>
+
+<p style="margin-top:20px;color:#d1d5db;line-height:1.8;padding-left: 10px;">
+Premium AI consulting and enterprise LLM development company for modern businesses.
+</p>
+
+
+</div>
+
+<div>
+
+<h4>Company</h4>
+
+<ul>
+
+<li><a href="index.html">About</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4>Services</h4>
+
+<ul>
+
+<li><a href="llm-development.html">LLM Development</a></li>
+
+<li><a href="ai-app-consulting.html">AI Automation</a></li>
+
+<li><a href="ai-saas-development.html">AI SaaS</a></li>
+
+<li><a href="mlops-consulting.html">MLOps</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4>Connect</h4>
+
+<ul>
+
+<li><a href="#">LinkedIn</a></li>
+
+<li><a href="#">Twitter</a></li>
+
+<li><a href="#">Instagram</a></li>
+
+<li><a href="https://api.whatsapp.com/send?phone=917708068697&text=Hello%20Solasilicon" target="_blank">WhatsApp</a></li>
+
+</ul>
+
+</div>
+
+</div>
+
+<hr style="border-color:rgba(255,255,255,.08);margin-bottom:30px;">
+
+<p style="text-align:center;color:#d1d5db;">
+© 2026 Solasilicon. All Rights Reserved.
+</p>
+
+</div>
+
+</footer>
+
+<!-- MODAL -->
+
+<div class="modal" id="modal">
+
+<div class="modal-content">
+
+<button class="close-modal" id="closeModal">
+×
+</button>
+
+<iframe
+src="https://calendly.com/"
+frameborder="0">
+</iframe>
+
+</div>
+
+</div>
+
+<!-- BACK TOP -->
+
+<button class="back-top" id="backTop">
+↑
+</button>
+
+<script src="js/llm.js"> </script>
+
+</body>
+</html>
