@@ -233,7 +233,7 @@ whatsappButtons.forEach(button => {
     button.addEventListener("click", () => {
 
         window.open(
-            "https://wa.me/917020698117?text=Hello%20Solasilicon,%20I%20want%20to%20connect%20with%20you",
+            "https://wa.me/919923933348?text=Hello%20Solasilicon,%20I%20want%20to%20connect%20with%20you",
             "_blank"
         );
 
