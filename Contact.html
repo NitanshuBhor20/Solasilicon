@@ -544,15 +544,12 @@
 
         <h2>Send Us A Message</h2>
 
-        <form id="contactForm"
-              action="https://formsubmit.co/solasilicon@gmail.com"
-              method="POST">
+        <form id="contactForm">
 
-            <!-- FormSubmit configuration -->
-            <input type="hidden" name="_subject" value="New contact form submission - Solasilicon">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_next" value="https://solasilicon.com/contact.html?sent=1">
+            <!-- Web3Forms access key -->
+            <input type="hidden" name="access_key" value="19477627-e190-40e1-9e81-5892c7701500">
+            <input type="hidden" name="subject" value="New contact form submission - Solasilicon">
+            <input type="hidden" name="from_name" value="Solasilicon Contact Form">
 
             <div class="row">
                 <input type="text" name="name" placeholder="Full Name" required>
@@ -675,23 +672,39 @@ Premium AI consulting and enterprise LLM development company for modern business
     const submitBtn = document.getElementById("submitBtn");
     const originalText = submitBtn.innerText;
 
-    // Show "Sending..." while the form submits (before page navigation).
-    form.addEventListener("submit", function(){
+    form.addEventListener("submit", function(e){
+        e.preventDefault();
+
         submitBtn.disabled = true;
         submitBtn.innerText = "Sending...";
+
+        const formData = new FormData(form);
+
+        fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        })
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(data){
+            if(data.success){
+                alert("Thank You! Your message has been sent successfully.");
+                form.reset();
+            } else {
+                alert("Sorry, there was a problem sending your message. Please try again.");
+                console.error("Web3Forms error:", data);
+            }
+        })
+        .catch(function(error){
+            console.error("Form submission error:", error);
+            alert("Sorry, there was a problem sending your message. Please try again or contact us directly.");
+        })
+        .finally(function(){
+            submitBtn.disabled = false;
+            submitBtn.innerText = originalText;
+        });
     });
-
-    // If the user is redirected back after a successful submission,
-    // show a thank-you message.
-    if(window.location.search.indexOf("sent=1") !== -1){
-        const msg = document.createElement("div");
-        msg.style.cssText = "background:#16a34a;color:#fff;padding:12px 20px;border-radius:8px;margin-bottom:16px;text-align:center;font-weight:600;";
-        msg.innerText = "Thank You! Your message has been sent successfully. We'll get back to you soon.";
-        form.parentNode.insertBefore(msg, form);
-
-        // Clean up the URL so refreshing doesn't keep showing the message.
-        history.replaceState({}, document.title, window.location.pathname);
-    }
 })();
 </script>
 
