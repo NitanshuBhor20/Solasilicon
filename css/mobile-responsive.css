@@ -1,0 +1,280 @@
+/* =====================================================
+   SHARED MOBILE RESPONSIVE STYLES
+   Applied to all pages for consistent mobile UX
+   Does NOT affect desktop layout
+   ===================================================== */
+
+/* ─── HAMBURGER BUTTON ─── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 1001;
+}
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+.hamburger.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.mobile-whatsapp {
+  display: none;
+}
+
+/* ─── PREVENT HORIZONTAL OVERFLOW ─── */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* ─── NAVBAR MOBILE (≤900px) ─── */
+@media (max-width: 900px) {
+  .navbar {
+    flex-direction: row !important;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    gap: 0;
+  }
+  .hamburger {
+    display: flex;
+    order: 3;
+  }
+  .logo {
+    order: 1;
+  }
+  .nav-btn,
+  .whatsapp-btn {
+    display: none;
+  }
+  /* Mobile nav menu */
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 85%;
+    max-width: 340px;
+    height: 100vh;
+    background: rgba(5, 8, 22, 0.98);
+    backdrop-filter: blur(16px);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 80px 24px 24px;
+    overflow-y: auto;
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    z-index: 999;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .nav-links li {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  .nav-links li a {
+    display: block;
+    padding: 14px 0;
+    font-size: 16px;
+  }
+  .nav-links li a::before {
+    display: none;
+  }
+  .mobile-whatsapp {
+    display: block;
+    margin-top: 16px;
+    border-bottom: none !important;
+  }
+  .mobile-whatsapp a {
+    background: linear-gradient(135deg, #2f01e7, #cd4de9);
+    border-radius: 12px;
+    padding: 14px 20px !important;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(158, 62, 222, 0.3);
+  }
+  /* Dropdowns in mobile menu */
+  .dropdown > a::after {
+    content: " ▼";
+    float: right;
+    font-size: 10px;
+    transition: 0.3s;
+  }
+  .dropdown.open > a::after {
+    transform: rotate(180deg);
+  }
+  .mega-menu,
+  .services-menu,
+  .products-menu {
+    position: static !important;
+    transform: none !important;
+    width: 100% !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: none;
+    margin-top: 0;
+    padding: 0 0 12px;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  .dropdown.open .mega-menu,
+  .dropdown.open .services-menu,
+  .services-dropdown.open .services-menu,
+  .products-dropdown.open .products-menu {
+    display: block;
+  }
+  .dropdown-grid,
+  .services-grid,
+  .products-grid {
+    grid-template-columns: 1fr !important;
+    flex-direction: column !important;
+    gap: 8px;
+  }
+  .menu-left,
+  .menu-card,
+  .service-column,
+  .services-right-card {
+    width: 100% !important;
+    flex: none !important;
+  }
+  .category,
+  .service-column,
+  .services-right-card {
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+  .menu-title,
+  .service-heading {
+    color: #fff !important;
+    border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+  }
+  .dropdown-item a,
+  .service-column a,
+  .product-item {
+    color: rgba(255, 255, 255, 0.75) !important;
+  }
+  .menu-card {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(139, 92, 246, 0.12)) !important;
+  }
+  .menu-card h2,
+  .services-right-card h2 {
+    color: #fff !important;
+  }
+  .menu-card p,
+  .services-right-card p {
+    color: rgba(255, 255, 255, 0.6) !important;
+  }
+  .product-item {
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+  .product-item h4 {
+    color: #fff !important;
+  }
+  .product-item p {
+    color: rgba(255, 255, 255, 0.5) !important;
+  }
+}
+
+/* ─── HERO MOBILE ─── */
+@media (max-width: 900px) {
+  .hero {
+    height: 100vh;
+    min-height: 560px;
+    padding: 0 16px;
+  }
+  .hero-content h1 {
+    font-size: 40px !important;
+    padding: 10px 0 !important;
+    line-height: 1.15;
+  }
+  .hero-content p {
+    font-size: 16px !important;
+    padding: 0 8px;
+    line-height: 1.6;
+  }
+  .hero-content br {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 30px !important;
+  }
+  .hero-content p {
+    font-size: 14px !important;
+  }
+}
+@media (max-width: 380px) {
+  .hero-content h1 {
+    font-size: 26px !important;
+  }
+}
+
+/* ─── FOOTER MOBILE ─── */
+@media (max-width: 900px) {
+  footer {
+    padding: 60px 0 30px;
+  }
+  footer .container {
+    padding: 0 20px;
+  }
+  .footer-grid {
+    gap: 32px;
+  }
+  .footer-grid h4 {
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+  .footer-grid ul {
+    gap: 10px;
+  }
+  .footer-grid a {
+    font-size: 14px;
+  }
+  footer .logo,
+  footer .logo-icon,
+  footer p {
+    padding-left: 0 !important;
+  }
+}
+@media (max-width: 600px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  footer .container {
+    padding: 0 16px;
+  }
+}
+
+/* ─── SECTION PADDING MOBILE ─── */
+@media (max-width: 900px) {
+  section {
+    padding: 70px 0;
+  }
+  .section-header {
+    margin-bottom: 40px;
+  }
+}

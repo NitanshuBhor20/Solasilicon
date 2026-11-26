@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -9,6 +9,7 @@
 
 <link rel="stylesheet" href="css/contact.css" />
 
+<link rel="stylesheet" href="css/mobile-responsive.css">
 </head>
 <body>
     
@@ -30,7 +31,14 @@
 
         <!-- NAV LINKS -->
 
-        <ul class="nav-links">
+                <!-- MOBILE HAMBURGER -->
+
+        <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+<ul class="nav-links">
 
             <!-- AI FOR YOUR BUSINESS -->
 
@@ -456,7 +464,14 @@
 </li>
 
 
-        </ul>
+        
+            <!-- WHATSAPP (MOBILE ONLY) -->
+
+            <li class="mobile-whatsapp">
+                <a href="https://api.whatsapp.com/send?phone=919923933348&text=Hello%20Solasilicon" target="_blank" rel="noopener">
+                    Say Hi on WhatsApp
+                </a>
+            </li></ul>
 
         <!-- BUTTON -->
 
@@ -498,7 +513,7 @@
         <div class="card">
             <i class="fas fa-phone"></i>
             <h3>Call Us</h3>
-            <p>+91 9923933348</p>
+            <p>+91 9834327269</p>
         </div>
 
         <div class="card">
@@ -529,17 +544,25 @@
 
         <h2>Send Us A Message</h2>
 
-        <form id="contactForm">
+        <form id="contactForm"
+              action="https://formsubmit.co/solasilicon@gmail.com"
+              method="POST">
+
+            <!-- FormSubmit configuration -->
+            <input type="hidden" name="_subject" value="New contact form submission - Solasilicon">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://solasilicon.com/contact.html?sent=1">
 
             <div class="row">
-                <input type="text" placeholder="Full Name" required>
-                <input type="email" placeholder="Email Address" required>
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
             </div>
 
             <div class="row">
-                <input type="tel" placeholder="Phone Number" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
 
-                <select required>
+                <select name="service" required>
                     <option value="">SaaS Development</option>
                     <option>SEO App Development</option>
                     <option>ERP Software</option>
@@ -548,9 +571,9 @@
                 </select>
             </div>
 
-            <textarea placeholder="Tell us about your project..." required></textarea>
+            <textarea name="message" placeholder="Tell us about your project..." required></textarea>
 
-            <button type="submit">Send Message</button>
+            <button type="submit" id="submitBtn">Send Message</button>
 
         </form>
 
@@ -647,16 +670,31 @@ Premium AI consulting and enterprise LLM development company for modern business
 </footer>
 
 <script>
-document.getElementById("contactForm")
-.addEventListener("submit", function(e){
+(function(){
+    const form = document.getElementById("contactForm");
+    const submitBtn = document.getElementById("submitBtn");
+    const originalText = submitBtn.innerText;
 
-    e.preventDefault();
+    // Show "Sending..." while the form submits (before page navigation).
+    form.addEventListener("submit", function(){
+        submitBtn.disabled = true;
+        submitBtn.innerText = "Sending...";
+    });
 
-    alert("Thank You! Your message has been sent successfully.");
+    // If the user is redirected back after a successful submission,
+    // show a thank-you message.
+    if(window.location.search.indexOf("sent=1") !== -1){
+        const msg = document.createElement("div");
+        msg.style.cssText = "background:#16a34a;color:#fff;padding:12px 20px;border-radius:8px;margin-bottom:16px;text-align:center;font-weight:600;";
+        msg.innerText = "Thank You! Your message has been sent successfully. We'll get back to you soon.";
+        form.parentNode.insertBefore(msg, form);
 
-    this.reset();
-});
+        // Clean up the URL so refreshing doesn't keep showing the message.
+        history.replaceState({}, document.title, window.location.pathname);
+    }
+})();
 </script>
 
+<script src="js/mobile-nav.js"></script>
 </body>
 </html>
